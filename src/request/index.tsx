@@ -12,7 +12,13 @@ instance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
     if (token) {
-      config.headers.Authorization = "Token::" + token;
+      config.headers.Authorization = token;
+    }
+
+    if (import.meta.env.VITE_MOCK === "true") {
+      config.baseURL = import.meta.env.VITE_MOCK_API;
+    } else {
+      config.baseURL = import.meta.env.VITE_BASE_API;
     }
     return {
       ...config,

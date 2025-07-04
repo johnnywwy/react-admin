@@ -1,8 +1,4 @@
-import {
-  Navigate,
-  createHashRouter,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Login from "../views/login";
 import Welcome from "../views/welcome";
 import NotFound from "@/views/notFound";

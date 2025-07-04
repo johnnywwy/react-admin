@@ -10,4 +10,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://m1.apifoxmock.com/m1/6694270-6403917-default',
+        changeOrigin: true,
+      }
+    }
+  }
 })
