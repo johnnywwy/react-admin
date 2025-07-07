@@ -1,8 +1,8 @@
 import stytles from "./index.module.less";
-export default function Welcome() {
+export const Welcome = () => {
   return (
     <div className={stytles.welcome}>
-      <div className={stytles.welcome}>
+      <div className={stytles.content}>
         <div className={stytles.subTitle}>欢迎使用</div>
         <div className={stytles.title}>
           React-admin/18/19企业中台通用管理系统
@@ -12,4 +12,4 @@ export default function Welcome() {
       <div className={stytles.img}></div>
     </div>
   );
-}
+};

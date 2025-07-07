@@ -7,7 +7,9 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
+import { Outlet } from "react-router-dom";
 import stytles from "./index.module.less";
+
 const { Header, Sider, Content } = Layout;
 
 const App: React.FC = () => {
@@ -71,7 +73,7 @@ const App: React.FC = () => {
             borderRadius: borderRadiusLG,
           }}
         >
-          Content
+          <Outlet />
         </Content>
       </Layout>
     </Layout>
