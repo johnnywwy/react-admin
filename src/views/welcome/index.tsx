@@ -1,33 +1,15 @@
-import storage from "@/utils/storage";
-import { Button } from "antd";
-function Welcome() {
-  const handleStorage = (type: number) => {
-    switch (type) {
-      case 1:
-        storage.set("age", 30);
-        storage.set("user", { name: "Lucy", gender: "1" });
-        break;
-      case 2:
-        console.log(storage.get("age"));
-        console.log(storage.get("user"));
-        break;
-      case 3:
-        console.log(storage.remove("age"));
-        break;
-      case 4:
-        storage.clear();
-        break;
-    }
-  };
+import stytles from "./index.module.less";
+export default function Welcome() {
   return (
-    <div className="welcome">
-      <p>Welcome</p>
-      <Button onClick={() => handleStorage(1)}>写入值</Button>
-      <Button onClick={() => handleStorage(2)}>读取值</Button>
-      <Button onClick={() => handleStorage(3)}>删除值</Button>
-      <Button onClick={() => handleStorage(4)}>清空所有</Button>
+    <div className={stytles.welcome}>
+      <div className={stytles.welcome}>
+        <div className={stytles.subTitle}>欢迎使用</div>
+        <div className={stytles.title}>
+          React-admin/18/19企业中台通用管理系统
+        </div>
+        <div className={stytles.desc}>React19、Zustand 、Antd、TypeScript</div>
+      </div>
+      <div className={stytles.img}></div>
     </div>
   );
 }
-
-export default Welcome;
