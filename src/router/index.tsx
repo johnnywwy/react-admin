@@ -3,10 +3,21 @@ import Login from "../views/login";
 import Welcome from "../views/welcome";
 import NotFound from "@/views/notFound";
 
+import Layout from "@/layout";
+
 const router = [
   {
+    element: <Layout />,
+    children: [
+      {
+        path: "/welcome",
+        element: <Welcome />,
+      },
+    ],
+  },
+  {
     path: "/",
-    element: <Welcome />,
+    element: <Navigate to={"/welcome"} />,
   },
   {
     path: "/login",
