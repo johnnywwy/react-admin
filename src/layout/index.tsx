@@ -1,80 +1,30 @@
-import React, { useState } from "react";
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
-import { Outlet } from "react-router-dom";
+import React from "react";
+import { Layout } from "antd";
 import stytles from "./index.module.less";
+import NavHeader from "./header";
 
-const { Header, Sider, Content } = Layout;
+import { useStore } from "@/store";
+import SideMenu from "./menu";
+import NavBreadcrumb from "./breadcrumb";
+import NavContent from "./content";
+const { Sider } = Layout;
 
 const App: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
+  const { collapsed } = useStore();
   return (
     <Layout className={stytles.layout}>
       <Sider
         trigger={null}
         collapsible
         collapsed={collapsed}
-        // style={{ border: "1px solid red" }}
         className={stytles.wrapper}
       >
-        <div className={stytles.logoWrapper} />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
-        />
+        <SideMenu />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
-            }}
-          />
-        </Header>
-        <Content
-          style={{
-            margin: "24px 16px",
-            padding: 24,
-            minHeight: 280,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          <Outlet />
-        </Content>
+        <NavHeader />
+        <NavBreadcrumb />
+        <NavContent />
       </Layout>
     </Layout>
   );
