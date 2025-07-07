@@ -1,9 +1,13 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
+import Layout from "@/layout";
 import Login from "../views/login";
 import Welcome from "../views/welcome";
 import NotFound from "@/views/notFound";
-
-import Layout from "@/layout";
+import User from "@/views/user";
+import Dept from "@/views/dept";
+import Menu from "@/views/menu";
+import Role from "@/views/role";
+import Dashboard from "@/views/dashboard";
 
 const router = [
   {
@@ -12,6 +16,26 @@ const router = [
       {
         path: "/welcome",
         element: <Welcome />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/userList",
+        element: <User />,
+      },
+      {
+        path: "/deptList",
+        element: <Dept />,
+      },
+      {
+        path: "/menuList",
+        element: <Menu />,
+      },
+      {
+        path: "/roleList",
+        element: <Role />,
       },
     ],
   },
