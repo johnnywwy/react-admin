@@ -1,10 +1,9 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Login from "../views/login";
-import { Welcome } from "../views/welcome";
+import Welcome from "../views/welcome";
 import NotFound from "@/views/notFound";
 
 import Layout from "@/layout";
-import { Home } from "@/views/home";
 
 const router = [
   {
@@ -13,10 +12,6 @@ const router = [
       {
         path: "/welcome",
         element: <Welcome />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
       },
     ],
   },
