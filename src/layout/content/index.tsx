@@ -11,9 +11,7 @@ export default function NavContent() {
     <Content
       style={{
         margin: "0 16px 16px 16px",
-        padding: 24,
         minHeight: 280,
-        background: colorBgContainer,
         borderRadius: borderRadiusLG,
       }}
     >
