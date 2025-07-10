@@ -9,5 +9,5 @@ export const useStore = create<{
   collapsed: false,
   currentMenu: '/dashboard',
   updateCollapsed: () => set((state) => ({ collapsed: !state.collapsed })),
-  setCurrentMenu: () => set((state) => ({ currentMenu: state.currentMenu }))
+  setCurrentMenu: (menu) => set(({ currentMenu: menu }))
 }))
