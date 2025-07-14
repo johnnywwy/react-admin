@@ -151,7 +151,7 @@ export default function Depth() {
         </div>
         <Table rowKey="_id" columns={columns} dataSource={data} />
       </div>
-      <CreateDept mref={deptRef} update={getDepthData} />
+      <CreateDept ref={deptRef} update={getDepthData} />
     </div>
   );
 }
