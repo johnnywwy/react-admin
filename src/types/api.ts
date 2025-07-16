@@ -1,3 +1,12 @@
+export interface ResultData<T> {
+  list: T[];
+  page: {
+    total: number | 0;
+    pageNum: number;
+    pageSzie: number;
+  };
+}
+
 // 登录模块
 export interface ILoginParams {
   username: string;
@@ -22,6 +31,11 @@ export interface IDept {
 export interface ISearchParams {
   menuName: string;
   menuState: number;
+}
+
+export interface IPageParams {
+  pageNum: number;
+  pageSize?: number;
 }
 
 // 用户模块
@@ -66,4 +80,38 @@ export interface IMenu extends ICreateMenuParams {
   createTime: string;
   buttons?: IMenu[];
   children?: IMenu[];
+}
+
+
+// 角色模块
+export interface IRole {
+  _id: string;
+  roleName: string;
+  remark: string;
+  permissionList: {
+    checkedKeys: string[];
+    halfCheckedKeys: string[];
+  };
+  createTime: string;
+  updateTime: string;
+}
+
+export interface IRoleSearchParams extends IPageParams {
+  roleName?: string;
+}
+
+export interface IRoleCreateParams {
+  roleName: string;
+  remark: string;
+}
+
+export interface IRoleEditParams extends IRoleCreateParams {
+  _id: string;
+}
+export interface IPermission {
+  _id: string;
+  permissionList: {
+    checkedKeys: string[];
+    halfCheckedKeys: string[];
+  };
 }
